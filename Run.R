@@ -19,6 +19,9 @@ print(data)
 
 # get some summary statistics:
 
+# cross tab
+xtabs(~data$cut + data$color)
+
 # mean price
 mean(data$price, na.rm=T)
 
@@ -36,4 +39,7 @@ sum(data$carat<=0.34)
 
 # make a plot
 plot(data$price~data$cut)
+
+# save the plot
+dev.copy(png,'results/myplot.png'); dev.off()
 
